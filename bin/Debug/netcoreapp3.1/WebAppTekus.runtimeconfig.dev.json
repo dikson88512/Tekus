@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\INGENESIS-DIKSON\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\INGENESIS-DIKSON\\.nuget\\packages",
+      "C:\\Microsoft\\Xamarin\\NuGet"
+    ]
+  }
+}

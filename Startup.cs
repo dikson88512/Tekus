@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebAppTekus.Common;
+using WebAppTekus.IServices;
+using WebAppTekus.Services;
 
 namespace WebAppTekus
 {
@@ -25,7 +28,13 @@ namespace WebAppTekus
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
+            services.AddSingleton<IConfiguration>(Configuration);
+            Global.ConnectionString = Configuration.GetConnectionString("Tekus");
+            services.AddScoped<IServicesCustomer, ServicesCustomer>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
